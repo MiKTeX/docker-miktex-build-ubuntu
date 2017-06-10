@@ -20,10 +20,17 @@ container path `/miktex/build`.
 
 ### Example
 
-You can create the MiKTEX deb as follows:
+Build the MiKTeX deb package:
 
-    mkdir ~/work/miktex
-    mkdir ~/work/miktex/source
-    mkdir ~/work/miktex/build-xenial
-    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.tar.xz | tar -xJ --strip-components=1 -C ~/work/miktex/source
-    docker run -t -v ~/work/miktex/source:/miktex/source:ro -v ~/work/miktex/build-xenial:/miktex/build:rw miktex/docker-miktex-build-xenial /miktex/make-package.sh
+    mkdir -p ~/work/miktex/source
+    mkdir -p ~/work/miktex/builds/xenial
+    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.tar.xz | \
+      tar -xJ --strip-components=1 -C ~/work/miktex/source
+    docker run -t \
+      -v ~/work/miktex/source:/miktex/source:ro \
+      -v ~/work/miktex/builds/xenial:/miktex/build:rw \
+      miktex/miktex-builds/xenial \
+      /miktex/make-package.sh
+
+The build artifact `miktex-*.deb` will be written to
+`~/work/miktex/builds/xenial`.
