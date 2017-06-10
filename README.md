@@ -1,14 +1,14 @@
-# Ubuntu "Xenial" docker image with MiKTeX build environment
+# Ubuntu 16.04 docker image with MiKTeX build environment
 
 ## Obtaining the image
 
 Get the latest image from the registry:
 
-    docker pull miktex/docker-miktex-build-xenial
+    docker pull miktex/miktex-build-xenial
 
 or build it yourself:
 
-    docker build --tag miktex/docker-miktex-build-xenial .
+    docker build --tag miktex/miktex-build-xenial .
 
 ## Using the image
 
