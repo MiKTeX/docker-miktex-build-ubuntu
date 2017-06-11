@@ -29,7 +29,7 @@ Build the MiKTeX deb package:
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
       -v ~/work/miktex/builds/xenial:/miktex/build:rw \
-      miktex/miktex-builds/xenial \
+      miktex/miktex-build-xenial \
       /miktex/make-package.sh
 
 The build artifact `miktex-*.deb` will be written to
