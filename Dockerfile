@@ -41,3 +41,5 @@ RUN mkdir /miktex
 ADD scripts/*.sh /miktex/
 
 WORKDIR /miktex
+
+CMD ["/miktex/make-package.sh"]
