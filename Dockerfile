@@ -5,6 +5,7 @@ LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Sch
 RUN apt-get update
 
 RUN apt-get install -y bison
+RUN apt-get install -y curl
 RUN apt-get install -y dpkg-dev
 RUN apt-get install -y flex
 RUN apt-get install -y g++
