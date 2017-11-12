@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.6369"
+LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.6525"
 
 RUN apt-get update
 
@@ -25,8 +25,6 @@ RUN apt-get install -y libicu-dev
 RUN apt-get install -y liblog4cxx10-dev
 RUN apt-get install -y libmpfr-dev
 RUN apt-get install -y libmspack-dev
-RUN apt-get install -y libpoppler-dev
-RUN apt-get install -y libpoppler-private-dev
 RUN apt-get install -y libpopt-dev
 RUN apt-get install -y libpotrace-dev
 RUN apt-get install -y libssl-dev
