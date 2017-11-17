@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 if [ ! -f /miktex/build/Makefile ]; then
     /miktex/configure.sh
 fi
