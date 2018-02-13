@@ -8,6 +8,7 @@ RUN    apt-get update \
 	   curl \
 	   bison \
            dpkg-dev \
+	   file \
            flex \
            g++ \
            gcc \
