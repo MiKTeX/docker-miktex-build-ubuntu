@@ -18,8 +18,8 @@ MiKTeX source code must be mounted to the container path
 `/miktex/source` and the build directory must be mounted to the
 container path `/miktex/build`.
 
-You should specify a user ID by setting the container environment
-variable `USER_ID`.
+You should specify a user by setting the container environment
+variables `USER_ID` and `GROUP_ID`.
 
 ### Example
 
@@ -33,6 +33,7 @@ Build the MiKTeX deb package:
       -v ~/work/miktex/source:/miktex/source:ro \
       -v ~/work/miktex/builds/xenial:/miktex/build:rw \
       -e USER_ID=`id -u` \
+      -e GROUP_ID=`id -g` \
       miktex/miktex-build-xenial
 
 The build artifact `miktex-*.deb` will be written to
