@@ -18,6 +18,9 @@ MiKTeX source code must be mounted to the container path
 `/miktex/source` and the build directory must be mounted to the
 container path `/miktex/build`.
 
+You should specify a user ID by setting the container environment
+variable `USER_ID`.
+
 ### Example
 
 Build the MiKTeX deb package:
@@ -29,6 +32,7 @@ Build the MiKTeX deb package:
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
       -v ~/work/miktex/builds/xenial:/miktex/build:rw \
+      -e USER_ID=`id -u` \
       miktex/miktex-build-xenial
 
 The build artifact `miktex-*.deb` will be written to

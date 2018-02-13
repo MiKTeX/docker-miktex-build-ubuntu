@@ -1,48 +1,55 @@
 FROM ubuntu:xenial
 
-LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.6548"
+LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.6618"
 
-RUN apt-get update
+RUN    apt-get update \
+    && apt-get install -y --no-install-recommends \
+       	   ca-certificates \
+	   curl \
+	   bison \
+           dpkg-dev \
+           flex \
+           g++ \
+           gcc \
+           make \
+           xsltproc \
+           xz-utils \
+           libbz2-dev \
+           libcairo2-dev \
+           libcurl4-openssl-dev \
+           libfribidi-dev \
+           libgd-dev \
+           libgmp-dev \
+           libgraphite2-dev \
+           libhunspell-dev \
+           libicu-dev \
+           liblog4cxx10-dev \
+           libmpfr-dev \
+           libmspack-dev \
+           libpopt-dev \
+           libpotrace-dev \
+           libssl-dev \
+           liburiparser-dev \
+           libzzip-dev \
+           qtbase5-dev \
+           qtscript5-dev \
+           qttools5-dev
 
-RUN apt-get install -y bison
-RUN apt-get install -y curl
-RUN apt-get install -y dpkg-dev
-RUN apt-get install -y flex
-RUN apt-get install -y g++
-RUN apt-get install -y gcc
-RUN apt-get install -y make
-RUN apt-get install -y xsltproc
-RUN apt-get install -y xz-utils
+RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz \
+     | tar -xz --strip=1 -C /usr/local
 
-RUN apt-get install -y libbz2-dev
-RUN apt-get install -y libcairo2-dev
-RUN apt-get install -y libcurl4-openssl-dev
-RUN apt-get install -y libfribidi-dev
-RUN apt-get install -y libgd-dev
-RUN apt-get install -y libgmp-dev
-RUN apt-get install -y libgraphite2-dev
-RUN apt-get install -y libhunspell-dev
-RUN apt-get install -y libicu-dev
-RUN apt-get install -y liblog4cxx10-dev
-RUN apt-get install -y libmpfr-dev
-RUN apt-get install -y libmspack-dev
-RUN apt-get install -y libpopt-dev
-RUN apt-get install -y libpotrace-dev
-RUN apt-get install -y libssl-dev
-RUN apt-get install -y liburiparser-dev
-RUN apt-get install -y libzzip-dev
-
-RUN apt-get install -y qtbase5-dev
-RUN apt-get install -y qtscript5-dev
-RUN apt-get install -y qttools5-dev
-
-ADD https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz /tmp/cmake-3.8.2-Linux-x86_64.tar.gz
-RUN tar -xz --strip=1 -C /usr/local -f /tmp/cmake-3.8.2-Linux-x86_64.tar.gz
-RUN rm /tmp/cmake-3.8.2-Linux-x86_64.tar.gz
+RUN    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
+    && curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.4/gosu-$(dpkg --print-architecture)" \
+    && curl -o /usr/local/bin/gosu.asc -SL "https://github.com/tianon/gosu/releases/download/1.4/gosu-$(dpkg --print-architecture).asc" \
+    && gpg --verify /usr/local/bin/gosu.asc \
+    && rm /usr/local/bin/gosu.asc \
+    && chmod +x /usr/local/bin/gosu
 
 RUN mkdir /miktex
-ADD scripts/*.sh /miktex/
-
 WORKDIR /miktex
 
+COPY scripts/*.sh /miktex/
+COPY entrypoint.sh /miktex/
+
+ENTRYPOINT ["/miktex/entrypoint.sh"]
 CMD ["/miktex/make-package.sh"]
