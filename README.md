@@ -4,11 +4,11 @@
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex-build-xenial
+    docker pull miktex/miktex-build-ubuntu:xenial
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-xenial .
+    docker build --tag miktex/miktex-build-ubuntu .
 
 ## Using the image
 
@@ -34,7 +34,7 @@ Build the MiKTeX deb package:
       -v ~/work/miktex/builds/xenial:/miktex/build:rw \
       -e USER_ID=`id -u` \
       -e GROUP_ID=`id -g` \
-      miktex/miktex-build-xenial
+      miktex/miktex-build-ubuntu:xenial
 
 The build artifact `miktex-*.deb` will be written to
 `~/work/miktex/builds/xenial`.
