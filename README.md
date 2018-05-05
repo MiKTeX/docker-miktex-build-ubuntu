@@ -8,7 +8,7 @@ Get the latest image from the registry:
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-ubuntu .
+    docker build --tag miktex/miktex-build-ubuntu:xenial .
 
 ## Using the image
 
