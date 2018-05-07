@@ -34,7 +34,7 @@ Build the MiKTeX deb package:
       -v ~/work/miktex/builds/ubuntu-latest:/miktex/build:rw \
       -e USER_ID=`id -u` \
       -e GROUP_ID=`id -g` \
-      miktex/miktex-build-ubuntu
+      miktex/miktex-build-ubuntu:latest
 
 The build artifact `miktex-*.deb` will be written to
 `~/work/miktex/builds/ubuntu-latest`.
