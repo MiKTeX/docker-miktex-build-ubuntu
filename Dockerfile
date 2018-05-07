@@ -1,22 +1,19 @@
-FROM ubuntu:bionic
+FROM ubuntu:latest
 
-LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.6699"
+LABEL Description="MiKTeX build environment, Ubuntu latest" Vendor="Christian Schenk" Version="2.9.6701"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
-       	   ca-certificates \
-	   cmake \
-	   curl \
-	   bison \
+           bison \
+           ca-certificates \
+           cmake \
+           curl \
            dpkg-dev \
-	   file \
+           file \
            flex \
            g++ \
            gcc \
            gosu \
-           make \
-           xsltproc \
-           xz-utils \
            libbz2-dev \
            libcairo2-dev \
            libcurl4-openssl-dev \
@@ -34,9 +31,12 @@ RUN    apt-get update \
            libssl-dev \
            liburiparser-dev \
            libzzip-dev \
+           make \
            qtbase5-dev \
            qtscript5-dev \
-           qttools5-dev
+           qttools5-dev \
+           xsltproc \
+           xz-utils
 
 RUN mkdir /miktex
 WORKDIR /miktex
