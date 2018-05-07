@@ -4,11 +4,11 @@
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex-build-ubuntu
+    docker pull miktex/miktex-build-ubuntu:bionic
 
 or build it yourself:
 
-    docker build --tag miktex/miktex-build-ubuntu .
+    docker build --tag miktex/miktex-build-ubuntu:bionic .
 
 ## Using the image
 
@@ -34,7 +34,7 @@ Build the MiKTeX deb package:
       -v ~/work/miktex/builds/bionic:/miktex/build:rw \
       -e USER_ID=`id -u` \
       -e GROUP_ID=`id -g` \
-      miktex/miktex-build-ubuntu
+      miktex/miktex-build-ubuntu:bionic
 
 The build artifact `miktex-*.deb` will be written to
 `~/work/miktex/builds/bionic`.
