@@ -1,6 +1,7 @@
 #!/bin/sh
 cd /miktex/build
 cmake \
+    -DMIKTEX_PACKAGE_REVISION="bionic1" \
     -DUSE_SYSTEM_HARFBUZZ=FALSE \
     -DUSE_SYSTEM_HARFBUZZ_ICU=FALSE \
     -DUSE_SYSTEM_POPPLER=FALSE \
