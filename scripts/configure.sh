@@ -1,4 +1,5 @@
 #!/bin/sh
+debian_revision=${1-bionic1}
 cd /miktex/build
 cmake \
     -DMIKTEX_PACKAGE_REVISION="bionic1" \
