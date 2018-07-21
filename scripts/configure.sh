@@ -1,8 +1,11 @@
 #!/bin/sh
-debian_revision=${1-foo1}
+package_revision=${1-1}
 cd /miktex/build
 cmake \
-    -DMIKTEX_PACKAGE_REVISION="${debian_revision}" \
+    -DMIKTEX_PACKAGE_REVISION=${package_revision} \
+    -DMIKTEX_LINUX_DIST=ubuntu \
+    -DMIKTEX_LINUX_DIST_VERSION=undefined \
+    -DMIKTEX_LINUX_DIST_CODE_NAME=undefined \
     -DUSE_SYSTEM_HARFBUZZ=FALSE \
     -DUSE_SYSTEM_HARFBUZZ_ICU=FALSE \
     -DUSE_SYSTEM_POPPLER=FALSE \
