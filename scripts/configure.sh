@@ -1,8 +1,11 @@
 #!/bin/sh
-debian_revision=${1-bionic1}
+package_revision=${1-1}
 cd /miktex/build
 cmake \
-    -DMIKTEX_PACKAGE_REVISION="bionic1" \
+    -DMIKTEX_PACKAGE_REVISION=${package_revision} \
+    -DMIKTEX_LINUX_DIST=ubuntu \
+    -DMIKTEX_LINUX_DIST_VERSION=18.04 \
+    -DMIKTEX_LINUX_DIST_CODE_NAME=bionic \
     -DUSE_SYSTEM_HARFBUZZ=FALSE \
     -DUSE_SYSTEM_HARFBUZZ_ICU=FALSE \
     -DUSE_SYSTEM_POPPLER=FALSE \

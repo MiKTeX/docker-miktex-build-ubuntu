@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 
-LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.6713"
+LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.6776"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
