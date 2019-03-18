@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.6776"
+LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.7016"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -33,6 +33,7 @@ RUN    apt-get update \
            qtbase5-dev \
            qtscript5-dev \
            qttools5-dev \
+           qttools5-dev-tools \
            xsltproc \
            xz-utils
 
