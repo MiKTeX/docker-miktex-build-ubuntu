@@ -1,12 +1,11 @@
 FROM ubuntu:bionic
 
-LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.6776"
+LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.7070"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
            bison \
            ca-certificates \
-           cmake \
            curl \
            dpkg-dev \
            file \
@@ -37,6 +36,9 @@ RUN    apt-get update \
            qttools5-dev \
            xsltproc \
            xz-utils
+
+RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
+     | tar -xz --strip=1 -C /usr/local
 
 RUN mkdir /miktex
 WORKDIR /miktex
