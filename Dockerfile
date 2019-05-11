@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.7016"
+LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.7070"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -37,7 +37,7 @@ RUN    apt-get update \
            xsltproc \
            xz-utils
 
-RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz \
+RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
      | tar -xz --strip=1 -C /usr/local
 
 RUN    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
