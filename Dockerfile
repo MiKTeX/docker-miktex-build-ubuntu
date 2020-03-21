@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.7070"
+LABEL Description="MiKTeX build environment, Ubuntu 16.04" Vendor="Christian Schenk" Version="2.9.7385"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -12,6 +12,7 @@ RUN    apt-get update \
            flex \
            g++ \
            gcc \
+	   git \
            libbz2-dev \
            libcairo2-dev \
            libcurl4-openssl-dev \
