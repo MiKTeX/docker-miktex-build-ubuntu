@@ -1,11 +1,16 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
-LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="2.9.7385"
+LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="2.9.7429"
 
-RUN    apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN    DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get install -y tzdata \
+    && ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime \
+    && dpkg-reconfigure --frontend noninteractive tzdata
+
+RUN    apt-get install -y --no-install-recommends \
            bison \
            ca-certificates \
+	   cmake \
            curl \
            dpkg-dev \
            file \
@@ -38,8 +43,8 @@ RUN    apt-get update \
            xsltproc \
            xz-utils
 
-RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
-     | tar -xz --strip=1 -C /usr/local
+#RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
+#     | tar -xz --strip=1 -C /usr/local
 
 RUN mkdir /miktex
 WORKDIR /miktex
