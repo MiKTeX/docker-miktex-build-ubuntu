@@ -10,14 +10,14 @@ RUN    DEBIAN_FRONTEND=noninteractive apt-get update \
 RUN    apt-get install -y --no-install-recommends \
            bison \
            ca-certificates \
-	   cmake \
+           cmake \
            curl \
            dpkg-dev \
            file \
            flex \
            g++ \
            gcc \
-	   git \
+           git \
            gosu \
            libbz2-dev \
            libcairo2-dev \
