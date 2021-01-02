@@ -12,7 +12,7 @@ RUN    apt-get update \
            flex \
            g++ \
            gcc \
-	   git \
+           git \
            libbz2-dev \
            libcairo2-dev \
            libcurl4-openssl-dev \
