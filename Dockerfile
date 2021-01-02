@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="2.9.7429"
+LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="21.1"
 
 RUN    DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y tzdata \
@@ -17,8 +17,10 @@ RUN    apt-get install -y --no-install-recommends \
            flex \
            g++ \
            gcc \
+           gettext \
            git \
            gosu \
+           libboost-locale-dev \
            libbz2-dev \
            libcairo2-dev \
            libcurl4-openssl-dev \
