@@ -12,7 +12,7 @@ RUN    apt-get update \
            flex \
            g++ \
            gcc \
-	   git \
+           git \
            gosu \
            libbz2-dev \
            libcairo2-dev \
