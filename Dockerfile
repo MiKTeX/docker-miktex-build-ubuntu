@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 
-LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="21.1"
+LABEL Description="MiKTeX build environment, Ubuntu 18.04" Vendor="Christian Schenk" Version="21.3"
 
 RUN    apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -35,6 +35,7 @@ RUN    apt-get update \
            libzzip-dev \
            make \
            qtbase5-dev \
+           qtdeclarative5-dev \
            qtscript5-dev \
            qttools5-dev \
            xsltproc \
