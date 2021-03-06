@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="21.1"
+LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="21.3"
 
 RUN    DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y tzdata \
@@ -40,6 +40,7 @@ RUN    apt-get install -y --no-install-recommends \
            libzzip-dev \
            make \
            qtbase5-dev \
+           qtdeclarative5-dev \
            qtscript5-dev \
            qttools5-dev \
            xsltproc \
