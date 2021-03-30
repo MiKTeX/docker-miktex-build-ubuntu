@@ -27,7 +27,7 @@ Build the MiKTeX deb package:
 
     mkdir -p ~/work/miktex/source
     mkdir -p ~/work/miktex/builds/focal
-    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.tar.xz | \
+    curl -fsSL https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-21.3.tar.xz | \
       tar -xJ --strip-components=1 -C ~/work/miktex/source
     docker run -t \
       -v ~/work/miktex/source:/miktex/source:ro \
