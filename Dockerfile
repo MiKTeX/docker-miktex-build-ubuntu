@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="21.3"
+LABEL Description="MiKTeX build environment, Ubuntu 20.04" Vendor="Christian Schenk" Version="23.12.29"
 
 RUN    DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y tzdata \
@@ -45,9 +45,6 @@ RUN    apt-get install -y --no-install-recommends \
            qttools5-dev \
            xsltproc \
            xz-utils
-
-#RUN    curl --fail --location --show-error --silent https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.tar.gz \
-#     | tar -xz --strip=1 -C /usr/local
 
 RUN mkdir /miktex
 WORKDIR /miktex
