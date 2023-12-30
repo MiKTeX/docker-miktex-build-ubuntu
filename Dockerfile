@@ -1,12 +1,6 @@
 FROM ubuntu:jammy
 
-LABEL Description="MiKTeX build environment, Ubuntu 22.04" Vendor="Christian Schenk" Version="22.8.20"
-
-#RUN \
-#    DEBIAN_FRONTEND=noninteractive apt-get update; \
-#    apt-get install -y tzdata; \
-#    ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime; \
-#    dpkg-reconfigure --frontend noninteractive tzdata
+LABEL Description="MiKTeX build environment, Ubuntu 22.04" Vendor="Christian Schenk" Version="23.12.30"
 
 RUN \
     apt-get update; \
@@ -42,12 +36,20 @@ RUN \
         liburiparser-dev \
         libzzip-dev \
         make \
-        qtbase5-dev \
-        qtdeclarative5-dev \
-        qtscript5-dev \
-        qttools5-dev \
         xsltproc \
         xz-utils
+
+RUN \
+    apt-get install -y --no-install-recommends \
+        libgl1-mesa-dev \
+        libglx-dev \
+        libqt6core5compat6-dev \
+        libqt6opengl6-dev \
+        qt6-base-dev \
+        qt6-declarative-dev \
+        qt6-l10n-tools \
+        qt6-tools-dev \
+        qt6-tools-dev-tools
 
 RUN mkdir /miktex
 WORKDIR /miktex
