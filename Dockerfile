@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 
-LABEL Description="MiKTeX build environment, Ubuntu 22.04" Vendor="Christian Schenk" Version="23.12.30"
+LABEL Description="MiKTeX build environment, Ubuntu 22.04" Vendor="Christian Schenk" Version="24.3.8"
 
 RUN \
     apt-get update; \
@@ -28,6 +28,7 @@ RUN \
         libhunspell-dev \
         libicu-dev \
         liblog4cxx-dev \
+        libmpfi-dev \
         libmpfr-dev \
         libmspack-dev \
         libpopt-dev \
