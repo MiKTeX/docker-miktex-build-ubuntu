@@ -31,8 +31,8 @@ RUN    apt-get install -y --no-install-recommends \
            libhunspell-dev \
            libicu-dev \
            liblog4cxx-dev \
-           libmpfi-dev \
-           libmpfr-dev \
+           #libmpfi-dev \
+           #libmpfr-dev \
            libmspack-dev \
            libpopt-dev \
            libpotrace-dev \
