@@ -28,8 +28,8 @@ RUN \
         libhunspell-dev \
         libicu-dev \
         liblog4cxx-dev \
-        libmpfi-dev \
-        libmpfr-dev \
+        #libmpfi-dev \
+        #libmpfr-dev \
         libmspack-dev \
         libpopt-dev \
         libpotrace-dev \
