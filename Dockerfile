@@ -1,6 +1,6 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
-LABEL Description="MiKTeX build environment, Ubuntu 22.04" Vendor="Christian Schenk" Version="24.3.8"
+LABEL Description="MiKTeX build environment, Ubuntu 24.04" Vendor="Christian Schenk" Version="24.4.26"
 
 RUN \
     apt-get update; \
