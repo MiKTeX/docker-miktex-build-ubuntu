@@ -1,6 +1,6 @@
 FROM ubuntu:resolute
 
-LABEL Description="MiKTeX build environment, Ubuntu 26.04" Vendor="Christian Schenk" Version="26.4.29"
+LABEL Description="MiKTeX build environment, Ubuntu 26.04" Vendor="Christian Schenk" Version="26.11.17"
 
 RUN \
     apt-get update; \
@@ -25,11 +25,12 @@ RUN \
         libgd-dev \
         libgmp-dev \
         libgraphite2-dev \
+        libharfbuzz-dev \
         libhunspell-dev \
         libicu-dev \
         liblog4cxx-dev \
-        #libmpfi-dev \
-        #libmpfr-dev \
+        libmpfi-dev \
+        libmpfr-dev \
         libmspack-dev \
         libpopt-dev \
         libpotrace-dev \
